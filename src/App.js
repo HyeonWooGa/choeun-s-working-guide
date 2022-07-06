@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+// 클래스 컴포넌트는 장황합니다.
+class ChoEun extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      name: "eun",
+    };
+  }
+
+  render() {
+    return <div>{this.state.name}</div>;
+  }
+}
+
+const Eun = () => {
+  const [name, setName] = useState("eun");
+  useEffect(() => {
+    console.log("this component is redered");
+  });
+  return <div>{name}</div>;
+};
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello React</h1>
-      <h2>Start editing to se some magic happen!</h2>
+    <div>
+      <ChoEun />
+      <Eun />
     </div>
   );
 }
